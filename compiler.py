@@ -1,30 +1,30 @@
 from mailbox import NoSuchMailboxError
 import jieba
 no=["False","None","True","and","as","assert","break","class","continue","def","del","elif","else","except","finally","for","from","global","if","import","inis","lambda","nonlocal","not","or","passraise","return","try","while","with","yield"]
-space_try=['0','0','0','0','0','0','0']
-space_except=['0','0','0','0','0','0']
-set_try=['0','0','0','0','0','0']
-space_if=['0','0','0','0','0','0','0']
-space_elif=['0','0','0','0','0','0']
-space_else=['0','0','0','0','0','0']
-set_if=['0','0','0','0','0','0']
-set_elif=['0','0','0','0','0','0']
+space_try=['0','0','0','0','0','0','0','0','0']
+space_except=['0','0','0','0','0','0','0','0','0']
+set_try=['0','0','0','0','0','0','0','0','0']
+space_if=['0','0','0','0','0','0','0','0','0']
+space_elif=['0','0','0','0','0','0','0','0','0']
+space_else=['0','0','0','0','0','0','0','0','0']
+set_if=['0','0','0','0','0','0','0','0','0']
+set_elif=['0','0','0','0','0','0','0','0','0']
 set_space = [0]
 
 def documentset():   #待检测文件的输入
     try:
-        p=input("输入你要引用的文本文件(内置correct.py)")
-        txtx=open('correct.txt',"r",encoding='utf-8').read()
-        txtline=open('correct.txt',"r",encoding='utf-8').readlines()
+        p=input("输入你要引用的文本文件(内置correct.txt)")
+        txtx=open(p,"r",encoding='utf-8').read()
+        txtline=open(p,"r",encoding='utf-8').readlines()
         txtx=txtx.lower()
     except:
         p=input("输入你要引用的文本文件,检查拼写！")
         try:
-            txtx=open(p,"r",encoding='utf-8').read()
+            txtline=open(p,"r",encoding='utf-8').read()
             txtx=txtx.lower()
         except:
             print("默认为correct.txt")
-            txtx=open('correct.txt',"r",encoding='utf-8').read()
+            txtline=open("correct.txt","r",encoding='utf-8').readlines()
     return txtline
 
 
@@ -50,7 +50,7 @@ def process(txtx,line):   #将一句文本拆分为一个个词并做词频统�
 def analysis(counts,txt,line):   #语法解析器，分析是否含有待检测成分
     out=0
     space=int(number(txt)/4)
-    if space < set_space[0]:
+    if space < set_space[0] and txt != ['\n']:
         out=out+check_before(space,line)
     set_space[0]=space
     for key in counts:
@@ -217,7 +217,7 @@ def correct_def(ifer):   #def的检测程序
             else :
                 counter_right = 'get3'
             if i<=len(ifer)-3:
-                if counter_left == 'get1' and (i == len(ifer)-3 or (ifer[i+2]=='#' and ifer[i+1]==':')):
+                if counter_left == 'get1' and (i == len(ifer)-3 or ifer[i+1]==':'):
                     counter_right='get2'       
     if counter_right != 'get2':
         if counter_right =='get3':
