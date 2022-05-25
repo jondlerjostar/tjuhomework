@@ -4,6 +4,8 @@ import prograssbar_word
 import turtle
 import seeker
 import matchAnalysis
+import url
+import compiler
 
 def hash_run():   #哈希加盐加密程序
     hash.hash()
@@ -21,5 +23,11 @@ def turtle_run():   #清屏
 def seeker_run():    #文本查询系统
     seeker.seeker()
 
-def matchAnalysis_run():
+def matchAnalysis_run():#比赛分析
     matchAnalysis.matchAnalysis()
+
+def url_run():#获取URL
+    url.url()
+
+def compiler_run(): #语法检查器
+    compiler.compiler()

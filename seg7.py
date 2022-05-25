@@ -95,14 +95,14 @@ def drawNum(date):#设置具体的格式
             print("输入错误，请检查你的输入情况(不应当包含字母、数字、汉字外的符号)")
             print("请重新进入系统，非常抱歉")
 
-def initial_seg7():
+def initial_seg7():   #程序初始化
     turtle.setup(8000,3500,200,200)#显示窗体的大小
     turtle.speed(5000000000000000000)
     turtle.penup()
     turtle.hideturtle()
     turtle.fd(-350)
 
-def totalset(mode):
+def totalset(mode):   #对于绘制颜色尺寸等的总设置
     long=1
     color="red"
     script="Arial"
@@ -118,7 +118,7 @@ def totalset(mode):
                 0 
     return color ,long, script
 
-def colorset():
+def colorset():    #颜色设置子函数
     tip_a=input("输入你想要的颜色:1.绿色 2.蓝色 3.黑色 4.紫色")
     if tip_a=="1":
         color="green"
@@ -133,7 +133,7 @@ def colorset():
         color="red"
     return color
 
-def scriptset():
+def scriptset():    #字体设置子函数
     tip_c=input("输入你想要的颜色:1.微软雅黑 2.宋体 3.楷体 4.verdana")
     if tip_c=="1":
         script="Mircosoft Yahei"
@@ -148,7 +148,7 @@ def scriptset():
         script="Arial"
     return script 
 
-def modeselect(work):
+def modeselect(work):   #模式设置子函数
     if work=="1":
         drawDate(datetime.datetime.now().strftime('%Y-%m=%d+'))#日期的读取方式，便于控制输出的顺序（年，月，日）
     elif work=="2":
@@ -158,7 +158,7 @@ def modeselect(work):
         print("输入错误，进入自定义输入模式！")
         drawNum(num)
 
-def seg7():
+def seg7():   #函数主体
     global long, color , script
     initial_seg7()
     long=1
@@ -174,3 +174,5 @@ def seg7():
     else:
         0
 
+if __name__ == '__main__':
+    seg7()

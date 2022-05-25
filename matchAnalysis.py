@@ -3,7 +3,7 @@ def printintro():
     print('这个程序模拟两个选手A和B的某种竞技比赛')
     print('程序运行需要A和B的能力值（以0到1之间的小数表示）')
  
-def  getinput():
+def  getinput():   #输入  选手能力值、今日天气等
     try:
         a=eval(input('请输入选手A的能力值(0-1):'))
         if not 0<=a<=1:
@@ -30,7 +30,7 @@ def  getinput():
     n=eval(input('输入模拟比赛场次(正整数):'))
     return a,aweather,b,bweather,n
  
-def simNgames(n,pa,wa,pb,wb):
+def simNgames(n,pa,wa,pb,wb):   #多场比赛的预测
     wina,winb=0,0
     weather_now=simweather()
     if weather_now==wa:
@@ -50,7 +50,7 @@ def simNgames(n,pa,wa,pb,wb):
 def gameover(a,b):
     return a==15 or b==15
 
-def simweather():
+def simweather():   #对天气的仿真
     weather=random()
     weathernow=0
     if 0<=weather<0.25:
@@ -75,7 +75,7 @@ def performance(p,w,now):
         prob=0.6*p+0.3*(0.5-random())
     return prob
 
-def simonegame(pa,pb,wa,wb,weather_now):
+def simonegame(pa,pb,wa,wb,weather_now):   #一场比赛的预测
     sa,sb=0,0
     serving='A'
     while not gameover(sa,sb):
@@ -91,15 +91,17 @@ def simonegame(pa,pb,wa,wb,weather_now):
                 serving='A'
     return sa,sb
  
-def printsummary(wina,winb):
+def printsummary(wina,winb):   #打印结果
     n=wina+winb
     print('竞技分析开始，共模拟{}场比赛'.format(n))
     print('选手A获胜{}场比赛，占比{:0.1%}'.format(wina,wina/n))
     print('选手B获胜{}场比赛，占比{:0.1%}'.format(winb,winb/n))
  
-def matchAnalysis():
+def matchAnalysis():     #函数主体
     printintro()
     proba,weathera,probb,weatherb,n=getinput()
     wina,winb=simNgames(n,proba,weathera,probb,weatherb)
     printsummary(wina,winb)
 
+if __name__ == '__main__':
+    matchAnalysis()

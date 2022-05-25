@@ -11,8 +11,8 @@ def documentset(p):
             txtx=open(p,"r",encoding='utf-8').read()
             txtx=txtx.lower()
         except:
-            print("输出错误，即将跳转！")
-            out="off"
+            print("输入错误，即将跳转！")
+            txtx=open('seg7.txt',"r",encoding='utf-8').read()
     return txtx,out
 
 def modset(mod):
@@ -60,7 +60,5 @@ def seeker():
         q=modset(mod)
         process(txtx,q)
 
-
-
-    
-    
+if __name__ == '__main__':
+    seeker() 

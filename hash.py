@@ -37,6 +37,7 @@ def hashIntro():
     print("欢迎来到哈希函数程序！")
 
 def hashgetdata():
+    pin='1'
     password=input("请输入您要加密的字符串")
     try:
         num=int(eval(input("请输入您需求的加密段位数")))
@@ -66,5 +67,6 @@ def hash():
     else:
         0
 
-hash()
+if __name__ == '__main__':
+    hash()
 

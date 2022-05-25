@@ -1,0 +1,67 @@
+if a==b:
+if a:
+if : a
+if a
+elif a:   
+elif : a
+elif a
+a=0 if b==0 else c=0
+
+if a:
+    elif a:
+else:
+else:
+elif:
+    if a= 
+        if a=
+        else
+    elif 2 :
+    else:
+
+
+
+while a==0:
+while a!=0:#这是一条注释
+    a    while a>=0:
+while : a
+while a
+while a=0:
+while a=0
+while : a=0
+
+
+def a():#这是一条注释
+def : a()
+def : a)
+a def : a() e
+def : a(
+    def a()
+def a():feo
+
+except:
+123 try:
+except:
+
+try:
+    try:
+        except:
+        if:
+    except:
+    try:
+except:
+
+try:
+    except:
+    try:
+    elif:
+    except:
+
+try:
+    try:
+except:
+
+try
+    try:
+    else:
+    except
+except:
