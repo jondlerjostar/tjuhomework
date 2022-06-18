@@ -23,6 +23,8 @@ def run():
             head.url_run()
         elif mode=="7" :
             head.compiler_run()   
+        elif mode=="8":
+            head.checker_run()
         else:
             print("我们仍在开发新的功能，敬请期待")
         choose=input("\n是否继续游玩?Y/N （其他输入视为继续参观）")

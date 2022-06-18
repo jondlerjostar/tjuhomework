@@ -6,6 +6,7 @@ import seeker
 import matchAnalysis
 import url
 import compiler
+import checker
 
 def hash_run():   #哈希加盐加密程序
     hash.hash()
@@ -31,3 +32,6 @@ def url_run():#获取URL
 
 def compiler_run(): #语法检查器
     compiler.compiler()
+
+def checker_run(): #语法检查器
+    checker.checker()

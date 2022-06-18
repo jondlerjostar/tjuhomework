@@ -13,7 +13,7 @@ set_space = [0]
 
 def documentset():   #待检测文件的输入
     try:
-        p=input("输入你要引用的文本文件(内置correct.txt)")
+        p=input("语法检查器，输入你要引用的文本文件(内置correct.txt)")
         txtx=open(p,"r",encoding='utf-8').read()
         txtline=open(p,"r",encoding='utf-8').readlines()
         txtx=txtx.lower()

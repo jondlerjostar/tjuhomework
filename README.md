@@ -31,6 +31,7 @@ seeker.py
 matchAnalysis,py
 url.py
 compiler.py
+checker.py
 ```
 ```
 seg7.txt
@@ -106,6 +107,13 @@ correct.txt
 - 新增了对同一语句中的错误数目的显示
 - 新增了头部检查，现在"有elif无else""有try无except"能够第一时间显示了
 
+## checker.py
+```
+语法检查器第二版，在老师建议下，以Flake8为基础编写，减少了工作量
+输入：待检查语篇
+输出：语法错误类型及其行数位置
+```
+
 # 备注
 - 全部程序采用自顶而下编程逻辑
 - 子程序均配备简要注释
@@ -118,3 +126,4 @@ correct.txt
     - url.py
     - compiler.py
     - 对主程序和程序逻辑进行了相应的重做
+- 6.18 上传checker.py
