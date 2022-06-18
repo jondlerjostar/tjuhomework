@@ -11,7 +11,7 @@ All other known bug can be sent to sdwfcwr@163.com
 Python 3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
 
 额外安装的库
-jieba、beautifulsoup、requests
+jieba、beautifulsoup、requests、Frake8
 
 ---
 
